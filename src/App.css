@@ -1,0 +1,143 @@
+/* ===== Whole page ===== */
+
+/* Padding and borders count inside an element's width (easier sizing) */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f4f6f8;
+  color: #1f2933;
+}
+
+/* Keep the content in a centered column so lines don't get too long */
+.page {
+  max-width: 960px;
+  margin: 0 auto; /* "auto" left and right centers the column */
+  padding: 24px;
+}
+
+/* ===== Header ===== */
+
+h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  color: #0b6e4f;
+}
+
+.subtitle {
+  margin-top: 4px;
+  font-size: 1.2rem;
+  color: #52606d;
+}
+
+/* The About box: a white card that stands out from the grey background */
+.about {
+  background: white;
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+}
+
+.about h2 {
+  margin-top: 0;
+  font-size: 1.2rem;
+}
+
+/* ===== Controls (FLEXBOX #1) ===== */
+
+/* Puts the dropdown and the search box side by side in a row.
+   flex-wrap lets them stack on narrow screens like phones. */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px; /* space between the two items */
+  margin-bottom: 24px;
+}
+
+/* Each label is also a flex container, but a vertical one (column):
+   the label text sits on top, the input below it.
+   flex: 1 makes both labels share the row's width equally. */
+.controls label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  min-width: 200px; /* below this width they wrap onto separate lines */
+  font-weight: 600;
+}
+
+select,
+input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #cbd2d9;
+  border-radius: 6px;
+}
+
+/* ===== Results ===== */
+
+.rate-date {
+  color: #52606d;
+}
+
+/* ===== Card list (FLEXBOX #2) ===== */
+
+/* Lays the cards out in rows that wrap onto the next line when full */
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* flex: 1 1 200px means: each card starts at 200px wide,
+   can grow to fill extra space (1), and can shrink if needed (1) */
+.card {
+  flex: 1 1 200px;
+  background: white;
+  border: 1px solid #e4e7eb;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.card h3 {
+  margin: 0;
+  color: #0b6e4f;
+}
+
+.card-name {
+  margin: 4px 0 12px;
+  color: #52606d;
+}
+
+.card-rate {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* ===== Status messages (loading, error, empty) ===== */
+
+.status {
+  background: white;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+/* Only the error gets red, so it is easy to notice */
+.status.error {
+  background: #fdecea;
+  color: #b42318;
+}
+
+/* ===== Footer ===== */
+
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid #cbd2d9;
+  color: #52606d;
+  font-size: 0.9rem;
+}
